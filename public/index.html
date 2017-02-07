@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html ng-app="todoList">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Angular Todo App</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body ng-controller="mainController">
+    <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1>Todo List Count: <span>{{ todos.length }}</span></h1>
+        </div>
+
+        <div id="todo-list" class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="checkboxContainer" ng-repeat="todo in todos">
+                    <label>
+                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="todo-form" class="row">
+            <div class="col-sm-6 col-sm-offset-3 text-center">
+                <form class="form">
+                    <div class="form-group">
+
+                        <input type="text" class="form-control input-lg text-center" placeholder="Add Todo" ng-model="formData.text">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="core.js"></script>
+</body>
+</html>

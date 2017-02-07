@@ -1,0 +1,29 @@
+html { 
+    overflow-y:scroll;
+    height: 100%;
+    width: 100%;
+}
+
+body { 
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #eee;
+}
+
+#todo-list{
+    margin-bottom:30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkboxContainer {
+    padding: 20px;
+    border: 1px solid #6f5499;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
